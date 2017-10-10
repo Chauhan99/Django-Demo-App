@@ -1,0 +1,4 @@
+from login_views import welcome,log_out
+from upload_views import upload_cover,upload_profile
+from profile_views import profile,profile_complete,profile_complete_submit,profile_edit,profile_edit_submit,password_change,password_change_submit
+from home_views import quiz,fetch_leaderboard,fetch_profiledata,fetch_quiz

@@ -1,0 +1,25 @@
+<table class="table table-bordered">
+
+<thead>
+	<tr class="success">
+		<th style="width:57px"> Rank </th>
+		<th> Name </th>
+		<th style="width:62px;"> Score </th>
+	</tr>
+</thead>
+
+{% if mleaderboard %}
+		{% for player in mleaderboard %}
+			<tr class="active">
+			<td>	{{ player.rank }} </td>
+			<td>	{{ player.user.username }} </td>
+			<td>	{{ player.score }} </td>
+			</tr>
+		{% endfor %}
+{% else %}	
+	<tr class="active">
+	<td colspan="3">Fetching leaderboard..
+	</td>
+	</tr>
+{% endif %}
+</table>

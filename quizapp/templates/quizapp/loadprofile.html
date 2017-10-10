@@ -1,0 +1,33 @@
+<table class="table table-bordered">
+{% if mprofiledata %}
+	<img src="/static/quizapp/images/logo.gif" style="width:1px;height:1px;" {% if mprofiledata.status == 1 %} onload="loadquiz()"{% endif %}>
+	<tr class="success" >
+	<th>{{ mprofiledata.user.first_name }} {{ mprofiledata.user.last_name }}
+	</th>
+	</tr>
+	<tr class="active">
+	<th>{{ mprofiledata.gender }}
+	</th>
+	</tr>
+	<tr class="active">
+	<th>
+	{% if mprofiledata.highscore == -1 %}
+		Highscore : -N/A-
+	{% else %}
+		Highscore : {{ mprofiledata.highscore }}
+	{% endif %}
+	</th>
+	</tr>
+	<tr class="warning">
+	<th><a href="/quizapp/logout">Logout</a>
+	</th>
+	</tr>
+{% else %}
+	<tr class="active">
+	<th>
+	Loading..
+	</th>
+	</tr>
+
+{% endif %}
+</table>

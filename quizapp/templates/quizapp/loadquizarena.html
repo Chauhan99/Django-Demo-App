@@ -1,0 +1,50 @@
+{% if messages %}
+	{% for message in messages %}
+	<center>
+	{{ message }}
+	</center>
+	{% endfor %}
+{% else %}
+	<center>Good Luck !!</center>
+{% endif %}
+
+{% if mquestion %}
+	<br/>
+	<table class="table table-bordered">
+	<tr>
+	<th>
+	Current Score : {{ mquestion.currentscore }}
+	</th>
+	</tr>		
+	<tr class="success" id="question-text">
+	<th>
+	{{ mquestion.question_text }}
+	</th>
+	</tr>
+
+	{% for option in mquestion.option_set %}
+		<tr class="active">
+		<th>
+		<input type="radio" name="selected" value="{{ forloop.counter }}">
+		{{ option }}
+		</th>
+		</tr>
+	{% endfor %}	
+
+	<tr class="warning">
+	<th>
+	<input type="submit" value="LOCK" onclick="submitanswer()"/>
+	</th>
+	</tr>
+	</table>
+
+{% else %}
+	<center>
+	<br/>
+	<img src="/static/quizapp/images/logo.gif" style="width:1px;height:1px;" onload="fetch_leaderboard()">
+	<button class="btn btn-primary btn-lg" onclick="startquiz()">
+	START QUIZ
+	</button>
+	</center>
+	
+{% endif %}

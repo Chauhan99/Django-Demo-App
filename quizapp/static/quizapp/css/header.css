@@ -1,0 +1,13 @@
+#head
+{
+	width:800px; 
+	margin:0 auto;
+}
+
+#header
+{
+	border: solid;
+	width: 100%;
+	height: 15%;
+	z-index: 1;
+}

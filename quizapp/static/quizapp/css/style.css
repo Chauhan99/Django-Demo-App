@@ -1,0 +1,90 @@
+*{margin:0px;padding:0px;box-sizing:border-box;}
+
+body{
+/*background:url(../images/blue5.jpg);*/
+background-repeat:no-repeat;
+background-size:100% auto;
+background-attachment:fixed;
+}
+
+#wrapper{
+position:absolute;
+height:100%;
+width:100%;
+top:0px;
+left:0px;
+}
+
+img
+{
+position:relative;
+height:60px;
+width:calc(100% - 30px);
+float:left;
+margin:10px 10px;
+display:inline-block;
+}
+
+#title
+{
+position: relative;
+width:100%;
+height: 80px;
+padding: 15px;
+text-align: center;
+vertical-align: center;
+}
+
+
+#content {
+position: relative;
+top: 100px;
+/*background: url(../images/blue3.jpg);*/
+background-repeat: no-repeat;
+background-size: 100% 100%;
+z-index: 1;
+min-height: 77%;
+/*margin-left:5%;*/
+text-align: center;
+padding-bottom: 50px;
+font-weight: bold;
+/*margin-bottom: 50px;*/
+font: 20px Georgia, sans-serif;
+width:800px; 
+margin:0 auto;
+}
+
+input
+{
+border-radius:10px ; 
+height:30px;
+}
+
+button
+{
+border-radius:10px ; 
+min-width: 75px;
+text-align: center;
+height:30px;
+}
+
+td
+{
+text-align:left; 	
+padding:8px;
+min-width:120px;
+}
+
+
+#footer
+{
+position:fixed;
+bottom:0px;
+left:0px;
+height:30px;
+width:100%;
+text-align: center;
+z-index:2;
+display:block;
+}
+

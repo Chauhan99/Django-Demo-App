@@ -1,0 +1,114 @@
+<html>
+<head>
+<!-- <link rel="stylesheet" type="text/css" href="/static/quizapp/css/style.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="/static/quizapp/css/profile.css"> -->
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/header.css">
+COMPLETE YOUR PROFILE
+</head>
+
+
+<body>
+
+	<header>	        
+		<div id="head">
+		<h1>:: QUIZ APP ::</h1>
+		</div>
+		
+		<div id="user">
+
+			<div id="username">
+			<b id="usernameb">	Welcome,<br/>
+			{{ request.session.username }}
+			</b>
+
+			<div class="parent"><a href="../../logout">LogOut</a></div>
+        	</div>
+    		</div>
+
+	    	</div>
+    </header>
+	
+<div id="content">
+		
+		<div id="title">
+			<h3>COMPLETE YOUR PROFILE</h3>
+		</div>
+
+		<div id="Notice">
+		<font color="red"></font>
+		</div>
+
+		<div id="comp_profile">
+		
+	 	<form action="./" method="POST">
+		{% csrf_token %}
+
+	 	<table>
+	 		
+		<tr><td>
+		Gender :
+		</td><td>
+		{{ form.gender }}
+		</td><td>
+		{{ form.gender.error }}
+		</td></tr>
+
+		<tr><td>
+		Date of Birth :
+		</td><td id="input">
+		{{ form.dob }}
+		<span id="req"> *</span><br>
+		</td><td>
+		{{ form.dob.error }}
+		</td></tr>
+
+		
+		<tr><td>
+		Contact :
+		</td><td id="input">
+		{{ form.contact }}
+		<span id="req"> *</span><br>
+		</td><td>
+		{{ form.contact.error }}
+		</td></tr>
+
+		<tr><td>
+		Address :
+		</td><td id="input">
+		{{ form.address }}
+		<span id="req"> *</span><br>
+		</td><td>
+		{{ form.address.error }}
+		</td></tr>
+
+		<tr><td>
+		About :
+		</td><td id="input">
+		{{ form.about }}
+		<span id="req"> *</span><br>
+		</td><td>
+		{{ form.about.error }}
+		</td></tr>
+
+		<tr><td style="left:50%;">
+		<button type="reset" value="Reset" style="position:relative; bottom:5px;height:30px;width:60px;">
+		RESET
+		</button>		
+		</td>
+		<td style="margin-left:50%;">
+		<button type="submit" style="position:relative; left:10px;bottom:5px;width:60px;">
+		SAVE
+		</button>
+		</td>
+		</tr>
+
+		</table>
+		</form>
+		</div>
+	</div>
+<div id="footer">
+	<h3> &copy Copyright | 2015</h3>
+	</div>
+
+</body>
+</html>

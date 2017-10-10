@@ -1,0 +1,151 @@
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/style.css">
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/header.css">
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/welcome.css">
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/bootstrap-theme.css">
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/bootstrap-theme.min.css">
+<script src="/static/quizapp/js/bootstrap.min.js"></script>
+
+<title>Log In</title>
+
+</head>
+
+<body>
+<div class="container">
+<header>	
+		<div id="head" >
+		<a href="../welcome">
+        <h1>@ :: WELCOME TO QUIZLET :: @</h1>
+		</a>
+		</div>
+</header>
+	
+<div id="content" class="container">
+<br/>
+
+<div id="notice">	
+{% if messages %}
+	{% for message in messages %}
+		<p {% if message.tags %} class="{{ message.tags }}"{% endif %} >
+			{{ message }}
+		</p>
+		
+	{% endfor %}
+{% endif %}
+</div>
+
+<br/>
+<div id="intermediateparent">
+
+<div id="loginblock">
+
+<form action="../profile/" method="POST">
+{% csrf_token %}
+
+<table id="login">
+
+<tr><td colspan="2">
+ALREADY REGISTERED, LOGIN HERE
+</td></tr>
+<tr><td>
+Username
+</td><td>
+<input type=text name='username' id='theusername'></input>
+</td></tr>
+
+<tr><td>
+Password
+</td><td> 
+<input type=password name='password' id='thepassword'></input>
+</td></tr>
+
+<tr><td id="submitb" colspan="2">
+<button type="submit">LOG IN</button>
+</td></tr>
+
+</table>
+
+</form>
+
+</div>
+
+
+<div id="signupblock">
+
+<form action='./' method="POST">
+
+{% csrf_token %}
+
+<table>
+
+<tr>
+<td colspan="2">
+REGISTER NOW
+</td>
+</tr>
+
+<tr><td>
+First Name
+</td><td>
+{{ form.first_name }}
+</td><td>
+{{ form.first_name.errors }}
+</td></tr>
+
+<tr><td>
+Last Name
+</td><td>
+{{ form.last_name }}
+</td><td>
+{{ form.last_name.errors }}
+</td></tr>
+
+<tr><td>
+Username
+</td><td>
+{{ form.username }}
+</td><td>
+{{ form.username.errors }}
+</td></tr>
+
+<tr><td>
+Password
+</td><td>
+{{ form.password }}
+</td><td>
+{{ form.password.errors }}
+</td></tr>
+
+<tr><td>
+E-mail
+</td><td>
+{{ form.email }}
+</td><td>
+{{ form.email.errors }}
+</td></tr>
+
+<tr><td colspan="2">
+<button type="submit">
+	SIGN UP
+</button>
+</td>
+</tr>
+</table>
+
+</div>
+
+</form>
+
+</div>
+
+
+<div id="footer">
+	<h3> &copy Copyright | 2015</h3>
+	</div>
+</div>
+<body>
+</html>

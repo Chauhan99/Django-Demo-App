@@ -1,0 +1,65 @@
+<html>
+<head>
+
+<title>
+WELCOME TO QUIZLET
+</title>
+
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/profile.css">
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/quiz.css">
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/leaderboard.css">
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/header.css">
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/footer.css">
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/static/quizapp/css/bootstrap-theme.min.css">
+<script src="/static/quizapp/js/bootstrap.min.js"></script>
+<script src="/static/quizapp/js/quiz.js"></script>
+<script src="/static/quizapp/js/jQuery.js"></script>
+
+</head>
+
+<body onload="fetch()">
+{% csrf_token %}
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar-header">
+<center>
+<a class="navbar-brand" href="#">Welcome To Quizlet</a>
+</center>
+</nav>
+
+
+	
+<div id="body" style="margin-top:75px;border:solid;padding-bottom:5px;" class="container">
+	
+
+	<div id="profile" class="container">
+		<center>
+		<h5><b>PROFILE DETAILS</b></h5>
+		</center>
+		<div id="profile-content">
+		{% include 'quizapp/loadprofile.html' %}
+		</div>
+	</div>
+
+	<div id="leaderboard" class="container">
+		<center><h5><b>LEADERBOARD</b></h5></center>
+		<div id="leaderboard-content">
+		{% include 'quizapp/leaderboard.html' %}
+		</div>
+	</div>
+
+	<div id="quiz" class="container">
+		
+		<center><h5><b>WELCOME TO QUIZ ARENA</b></h5></center>
+		
+		<div id="quiz-content">
+		{% include 'quizapp/loadquizarena.html' %}
+		</div>
+		
+	</div>
+	
+</div>
+
+</body>
+</html>

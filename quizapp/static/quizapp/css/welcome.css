@@ -1,0 +1,36 @@
+#loginblock {
+position:relative;
+display: inline-block;
+padding-top: 10px;
+padding-left: 10px;
+margin-right: 10px;
+float: left;
+}
+
+#signupblock
+{
+display: inline-block;
+float: left;
+margin-left: 10px;
+padding-top: 10px;
+padding-right: 10px;
+}
+
+#intermediateparent
+{
+	display: inline-block;
+	width: width(signupblock)+width(loginblock);
+	min-width: width(signupblock)+width(loginblock);
+	margin:0 auto;
+}
+
+td
+{
+	font-weight: bold;
+
+}
+
+button
+{
+	font-weight: bold;
+}

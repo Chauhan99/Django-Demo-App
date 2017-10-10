@@ -1,0 +1,118 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="/static/logapp/css/style.css">
+<link rel="stylesheet" type="text/css" href="/static/logapp/css/header.css">
+<link rel="stylesheet" type="text/css" href="/static/logapp/css/profile_edit.css">
+<title>
+EDIT YOUR PROFILE
+</title>
+</head>
+
+<body>
+
+	<header>	
+    	<div id="logo" style="">
+        <a href="../../welcome">
+        <img src="/static/logapp/images/logo.gif" alt="logo"/>
+		</a>
+		</div>
+        
+		<div id="head">
+		<h1>@ :: WELCOME TO NIKHIL's NETWORK :: @</h1>
+		</div>
+		
+		<div id="user">
+
+			<div id="username">
+			<b id="usernameb	">	Welcome,<br/>
+			{{ request.session.username }}
+			</b>
+
+			<div id="settings">
+        	<div class="wrapper">
+            	<div class="content">
+               	 <ul>
+               	     <a href="./"><li>Edit Profile</li></a>
+               	     <a href="./password"><li>Change Password</li></a>
+               	     <a href="../../logout"><li>Log Out</li></a>
+               	 </ul>
+            	</div>
+
+        	<div class="parent">Settings</div>
+        	</div>
+    		</div>
+
+	    	</div>
+    </header>
+	
+<div id="content">
+	<div id="title">
+			<h3>EDIT YOUR PROFILE</h3>
+	</div>
+
+	<div id="notice">
+
+	</div>
+
+	<div id="signup">
+{{ form.gender.as_p }}
+	<table>
+	<form action="./submit/" method="POST">
+		{% csrf_token %}
+				<tr><td>
+		Gender : 
+		</td><td>
+		{{ profile.gender }}
+		</td><td>
+		{{ form.gender }}
+		</td><td>
+		</td><tr/>
+		
+		<tr><td>
+		Date of Birth : 
+		</td><td>
+		{{ profile.dob }}
+		</td><td>
+		{{ form.dob }}
+		</td><td>
+		</td><tr/>
+		
+		<tr><td>
+		Contact : 
+		</td><td>
+		{{ profile.contact }}
+		</td><td>
+		{{ form.contact }}
+		</td><td>
+		</td><tr/>
+		
+		<tr><td>
+		Address : 
+		</td><td>
+		{{ profile.address }}
+		</td><td>
+		{{ form.address }}
+		</td><td>
+		</td><tr/>
+		
+		<tr><td>
+		About : 
+		</td><td>
+		{{ profile.about }}
+		</td><td>
+		{{ form.about }}
+		</td><td>
+		</td><tr/>
+
+
+
+		</table>
+
+		<button type="submit"> CHANGE </button>
+
+		</form>
+
+
+</body>
+
+</html>
